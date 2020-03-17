@@ -1,0 +1,17 @@
+<div class="category-grid">
+
+    <h2>All Products</h2>
+
+    {{#each proData}}
+
+        <figure><img src={{this.image}} /></figure>
+
+        <p>{{this.title}}</p>
+
+        <p>{{this.price}}</p>
+
+        <p>BestSeller : {{this.BestSeller}}</p>
+        
+    {{/each}}
+
+</div>

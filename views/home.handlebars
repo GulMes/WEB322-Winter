@@ -1,0 +1,30 @@
+
+<div class="category-grid">
+<h2>Promotions</h2>
+ {{#each promotions}}
+        <figure>
+            <img src={{this.image}} />
+        </figure>
+    {{/each}}
+</div>
+
+<div class="category-grid">
+    <h2>Categories</h2>
+    {{#each categories}}
+        <figure>
+            <img src={{this.image}} />
+            <p class="category">{{title}}</p>
+        </figure>
+    {{/each}}
+</div>
+
+<div class="category-grid">
+    <h2>Best Seller</h2>
+    {{#each bestSell}}
+        <figure>
+            <img src={{this.image}} />
+            <p class="bestSeller">{{title}}</p>
+        </figure>
+    {{/each}}
+</div>
+
