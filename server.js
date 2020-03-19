@@ -2,6 +2,7 @@ const express = require("express");
 const exphbs = require('express-handlebars');
 const bodyParser = require('body-parser');
 
+require('dotenv').config({path:"./config/keys.env"});
 
 const app = express();
 
@@ -63,10 +64,27 @@ app.post("/Register", (req, res) => {
         });
     }
     else {
-        const { name } = req.body;
-        res.render("register", {
-            successMsg: `Thank you ${name}. Your account is created.`
-        });
+
+        const {name, email, password} = req.body;
+
+        const sgMail = require('@sendgrid/mail');
+        sgMail.setApiKey(process.env.SENDGRID_API_KEY);
+        const msg = {
+            to: `gmesrefoglu@myseneca.ca`,
+            from: `${email}`,
+            subject: 'Registration Form',
+            html: `Full Name ${name} <br>
+                   Email Address ${email} <br>
+                   Password ${password} <br>`,
+        };
+        sgMail.send(msg)
+        .then(()=>{
+            res.redirect("/");
+        })
+        .catch(err=>{
+            console.log(`Error ${err}`);
+        })
+
     }
 });
 
