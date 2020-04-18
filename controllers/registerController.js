@@ -3,7 +3,9 @@ const router = express.Router();
 
 //Customer registration
 router.get("/Register", (req, res) => {
-    res.render("register");
+    res.render("register", {
+        title: "Register"
+    });
 });
 
 

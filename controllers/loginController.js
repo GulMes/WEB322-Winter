@@ -5,7 +5,10 @@ const router = express.Router();
 
 //Login
 router.get("/Login", (req, res) => {
-    res.render("login");
+    res.render("login", {
+        title: "Login"
+    });
+
 });
 
 //Login form submission
