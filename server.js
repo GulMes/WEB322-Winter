@@ -25,9 +25,9 @@ const registerController = require("./controllers/registerController");
 
 //map each controller to the app object
 app.use("/",homeController);
-app.use("/login",loginController);
-app.use("/product",productController);
-app.use("/register",registerController);
+app.use("/Login",loginController);
+app.use("/Product",productController);
+app.use("/Register",registerController);
 
 //Set up server
 const PORT = process.env.PORT;
