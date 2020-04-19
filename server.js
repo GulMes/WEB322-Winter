@@ -28,9 +28,9 @@ app.set('view engine', 'handlebars');
 
 //map Express to all router objects
 app.use("/",homeRoutes);
-app.use("/login",loginRoutes);
-app.use("/product",productRoutes);
-app.use("/register",registerRoutes);
+app.use("",loginRoutes);
+app.use("",productRoutes);
+app.use("",registerRoutes);
 
 
 mongoose.connect(process.env.MONGO_DB_CONNECTION_STRING, {useNewUrlParser: true, useUnifiedTopology: true})
