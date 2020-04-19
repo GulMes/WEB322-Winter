@@ -4,7 +4,7 @@ const router = express.Router();
 
 
 //Login
-router.get("/Login", (req, res) => {
+router.get("/login", (req, res) => {
     res.render("login", {
         title: "Login"
     });
@@ -12,7 +12,7 @@ router.get("/Login", (req, res) => {
 });
 
 //Login form submission
-router.post("/Login", (req, res) => {
+router.post("/login", (req, res) => {
     const errors = [];
 
     if (req.body.email == "") {

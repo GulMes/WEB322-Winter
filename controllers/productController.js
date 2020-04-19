@@ -5,7 +5,7 @@ const router = express.Router();
 //load models
 const productModel = require("../models/product");
 
-router.get("/Product", (req, res) => {
+router.get("/product", (req, res) => {
     res.render("product", {
         title: "Products",
         proData: productModel.getAllProduct()
